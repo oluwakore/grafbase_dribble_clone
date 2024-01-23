@@ -1,12 +1,21 @@
+scalar URL
+
 type User {
 	name: String! @length(min: 2, max: 20)
   email: String! @unique
-	projects: [Project]
+  avatarUrl: URL!
+  description: String!
+  githubUrl: URL
+  linkedInUrl: URL
+	projects: [Project!]
 }
 
 type Project {
-	title: String @length(min: 3)
-	notes: String
-	complete: Boolean!
-  createdBy: [User]
+	title: String! @length(min: 3)
+  description: String!
+  image: URL!
+  liveSiteUrl: URL!
+  githubUrl: URL!
+  category: String! @search(terms: String!)
+  createdBy: User!
 }
