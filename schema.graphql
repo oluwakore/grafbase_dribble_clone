@@ -1,10 +1,10 @@
-type User @model {
+type User {
 	name: String! @length(min: 2, max: 20)
   email: String! @unique
 	projects: [Project]
 }
 
-type Project @model {
+type Project {
 	title: String @length(min: 3)
 	notes: String
 	complete: Boolean!
