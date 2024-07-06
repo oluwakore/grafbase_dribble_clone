@@ -17,6 +17,6 @@ type Project {
   liveSiteUrl: URL!
   githubUrl: URL!
   category: String! 
-  @search(terms: String!)
+  @search(terms: String)
   createdBy: User!
 }
